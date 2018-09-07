@@ -1,0 +1,29 @@
+<div class="search">
+  <form class="searchForm">
+
+    <div  class="select-wrapper">
+      <div class="select" (click)='selectorOfTypes.toggleListView(typesList)'>
+        {{selectorOfTypes.getSelectedValue()}}
+      </div>
+      <ul class="options hidden" (click)='selectorOfTypes.selectItem($event, typesList)' #typesList>
+        <li *ngFor='let language of selectorOfTypes.getDataArray()'>
+          {{language}}
+        </li>
+      </ul>
+    </div>
+
+    <div  class="select-wrapper">
+      <div class="select" (click)='selectorOfLanguages.toggleListView(list)'>
+        {{selectorOfLanguages.getSelectedValue()}}
+      </div>
+      <ul class="options hidden" (click)='selectorOfLanguages.selectItem($event, list)' #list>
+        <li *ngFor='let language of selectorOfLanguages.getDataArray()'>
+          {{language}}
+        </li>
+      </ul>
+    </div>
+
+    <input class="searchFrom__keywords" type="text">
+    <button type="submit">search</button>
+  </form>
+</div>
