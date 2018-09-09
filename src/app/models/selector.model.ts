@@ -15,16 +15,12 @@ export class SelectorModel {
     list.classList.toggle('hidden');
   }
 
-  selectItem(event, list) {
+  selectItem(type, list) {
     if (!this.$list) {
       this.$list = list
     };
-
-    const target = event.target;
-
-    if (target.tagName !== 'LI') return;
-
-    this.selected = target.innerHTML;
+    
+    this.selected = type;
 
     this.toggleListView(this.$list);
   }

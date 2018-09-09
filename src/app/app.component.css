@@ -60,7 +60,8 @@ nav a:last-child {
   margin-right: 0;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   color: #fff;
 }
 
@@ -73,5 +74,6 @@ footer {
 footer p {
   line-height: 40px;
   flex: 0 0 auto;
+  font-family: 'Roboto', sans-serif;
 }
 
