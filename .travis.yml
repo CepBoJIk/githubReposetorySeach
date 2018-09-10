@@ -4,7 +4,7 @@ node_js:
 
 script:
   - ng build --prod --base-href "/githubReposetorySeach/"
-  - npx ngh --dir=dist/
+  - npx ngh --dir=dist/searchGithubRepositories
 deploy:
   provider: pages
   skip_cleanup: true
