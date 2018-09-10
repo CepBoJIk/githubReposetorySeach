@@ -8,6 +8,10 @@
   flex: 1 0 auto;
 }
 
+.search {
+  padding: 0 10%;
+}
+
 header {
   display: flex;
   align-items: center;

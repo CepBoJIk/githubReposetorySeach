@@ -1,15 +1,14 @@
 import { Injectable } from "@angular/core";
 import { RestDataSource } from './rest.datasource';
-import { SavedRepositoryModel } from './saved-repository.model';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class RepositoryModel {
   private data: Array<Object> = [];
   public isDataReceived = false;
+  private savedRepository: Array<any> = [];
 
-  constructor(private datasource: RestDataSource,
-              private savedData: SavedRepositoryModel,
-  ) { }
+  constructor(private datasource: RestDataSource, private router: Router) { }
 
   sendRequest(type, language, keywords) {
     this.isDataReceived = false;
@@ -18,13 +17,15 @@ export class RepositoryModel {
       (response) => {
         this.isDataReceived = true;
         this.data = response.items;
-        console.log(response);
       },
       (error) => console.log(error)
     );
   }
 
   getData(): Array<Object> {
+    if (this.router.url === '/my-list') {
+      return this.savedRepository;
+    }
     return this.data;
   }
 
@@ -35,17 +36,12 @@ export class RepositoryModel {
     } else {
       this.savedRepository.push(repository);
     }
-    console.log(this.savedRepository)
-  }
-
-  getSavedRepository(): Array<Object> {
-    return this.savedRepository;
   }
 
   searchRepository(repository: {[key: string]: any}) {
     let indexItem = -1;
-    const savedRepository = this.savedData.getData();
-    savedRepository.forEach((item, index) => {
+
+    this.savedRepository.forEach((item, index) => {
       if (item.id === repository.id) indexItem = index;
     })
 

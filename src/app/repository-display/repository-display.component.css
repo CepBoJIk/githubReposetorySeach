@@ -175,3 +175,22 @@
   border-radius: 13px;
   background-color: #F1F8FE;
 }
+
+.repositories-not-found {
+  text-align: center;
+  background: url(/assets/github-ic.svg) no-repeat center center;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+
+.repositories-not-found h1 {
+  padding-top: 60px;
+  color: #0366D6;
+  font-size: 36px;
+  line-height: 1.3;
+  font-weight: bold;
+}
+
+.repositories-not-found p {
+  font-size: 24px;
+}

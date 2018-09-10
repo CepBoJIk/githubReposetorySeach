@@ -31,20 +31,16 @@ export class SearchComponent implements OnInit {
     const type = this.selectorOfTypes.getSelectedValue();
     const language = this.selectorOfLanguages.getSelectedValue();
     this.repository.sendRequest(type, language, this.keywords);
+    this.keywords = '';
+  }
+
+  getRepositories() {
+    return this.repository.getData();
   }
 
   getValidation(keywords: NgModel) {
     if (this.isFormSubmit && keywords.invalid) return 'red';
     return ''
-  }
-
-  isResultFound() {
-    if (this.repository.isDataReceived) {
-      if (this.getRepositories().length === 0) return false;
-      return true;
-    }
-
-    return true;
   }
 
   ngOnInit() { }

@@ -27,11 +27,5 @@
     <button type="submit">search</button>
   </form>
 
-  <app-repository-display [data] = 'repository'></app-repository-display>
-
-  <div class="repositories-not-found" *ngIf='!isResultFound()'>
-    <h1>NO RESULTS FOUND</h1>
-    <p>select other parameters and try again</p>
-  </div>
-  
+  <app-repository-display></app-repository-display>
 </div>
