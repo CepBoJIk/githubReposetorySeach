@@ -3,7 +3,7 @@ node_js:
   - stable
 
 script:
-  - ng build --prod --base-href "/githubReposetorySeach" --deploy-url "/githubReposetorySeach"
+  - ng build --prod --base-href "/githubReposetorySeach/" --deploy-url "/githubReposetorySeach"
 
 deploy:
   provider: pages
