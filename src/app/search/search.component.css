@@ -8,6 +8,24 @@
   padding: 25px 0;
 }
 
+@media screen and (max-width: 680px) {
+  .searchForm {
+    flex-direction: column;
+  }
+
+  .select-wrapper {
+    flex: 0 0 100%;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .searchFrom__keywords {
+    flex: 0 0 100%;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+}
+
 .select-wrapper {
   position: relative;
   flex: 1 0 auto;

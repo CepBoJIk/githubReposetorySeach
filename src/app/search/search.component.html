@@ -19,10 +19,12 @@
       </ul>
     </div>
     <div class="searchFrom__keywords">
-      <span [style.color]='getValidation(keyword)'>Type here for search</span>
-      <input type="text" required
-      id="keywords" name="keywords" #keyword='ngModel' [(ngModel)]='keywords'
-      [style.borderColor]='getValidation(keyword)'>
+      <label>
+        <span [style.color]='getValidation(keyword)'>Type here for search</span>
+        <input type="text" required
+          id="keywords" name="keywords" #keyword='ngModel' [(ngModel)]='keywords'
+          [style.borderColor]='getValidation(keyword)'>
+      </label>
     </div>
     <button type="submit">search</button>
   </form>
